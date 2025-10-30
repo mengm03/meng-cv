@@ -208,3 +208,48 @@ h2 {
 .contact-email:hover {
     color: #59738c;
 }
+/* --- 新增：主打專案區塊樣式 --- */
+.project-showcase {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* 圖片與文字的間距 */
+    background-color: #f8faff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #eaf0f6;
+    margin-top: 40px; /* 與上方卡片區的間距 */
+}
+
+.showcase-image {
+    flex-shrink: 0; /* 防止圖片被壓縮 */
+}
+
+.showcase-image img {
+    max-width: 300px; /* 限制圖片最大寬度 */
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(120, 120, 150, 0.1);
+}
+
+.showcase-content h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #596a7a;
+}
+
+.showcase-content p {
+    margin-bottom: 20px;
+}
+
+/* 響應式設計：在小螢幕上，讓圖片與文字垂直堆疊 */
+@media (max-width: 768px) {
+    .project-showcase {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .showcase-image img {
+        max-width: 100%; /* 在小螢幕上讓圖片滿寬 */
+        margin-bottom: 20px;
+    }
+}
