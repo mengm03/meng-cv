@@ -1,77 +1,184 @@
+/* --- 全局樣式 --- */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, "蘋方-繁", "Microsoft JhengHei", sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background-color: #f8f9fa;
+    color: #343a40;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 30px auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 10px;
 }
 
-header {
-    text-align: center;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    margin: 5px 0;
-    font-size: 1.2em;
-    color: #555;
-}
-
-.contact-info p {
-    margin: 2px 0;
-    font-size: 0.9em;
-}
-
-.contact-info a {
-    color: #337ab7;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
+section {
+    margin-bottom: 40px;
 }
 
 h2 {
-    color: #337ab7;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-    margin-top: 30px;
-}
-
-section p, section ul {
-    font-size: 1em;
-}
-
-.experience .job, .education .edu-item, .projects .project {
+    color: #007bff;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
     margin-bottom: 20px;
+    font-size: 1.8em;
 }
 
-.experience h3, .education h3, .projects h3 {
-    margin-bottom: 5px;
+/* --- Hero (首頁橫幅) --- */
+.hero {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 40px;
 }
 
-.experience p em, .education p em {
-    color: #777;
-    font-size: 0.9em;
+.hero h1 {
+    margin: 0;
+    font-size: 3.5em;
+    color: #212529;
 }
 
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
+.hero p {
+    margin: 10px 0 0;
+    font-size: 1.5em;
+    color: #6c757d;
+}
+
+/* --- Skills (技能) --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.skill-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.skill-header i {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-right: 15px;
+    width: 30px; /* 固定圖示寬度，讓文字對齊 */
+    text-align: center;
+}
+
+.progress-bar {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 12px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: #007bff;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* --- Projects (專案作品) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #343a40;
+}
+
+.tech-stack {
+    margin: 15px 0;
+}
+
+.tech-stack span {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+}
+
+/* --- Contact (聯絡方式) --- */
+#contact {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.contact-email {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-email:hover {
+    text-decoration: underline;
 }
