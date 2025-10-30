@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>張孟恩 - 線上履歷</title>
+    <!-- 引入新的 Google Font 字體 (選用) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- 引入 Font Awesome 圖示庫 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -13,6 +16,7 @@
         <!-- Hero (首頁橫幅) -->
         <header class="hero">
             <h1>張孟恩</h1>
+            <img src="profile.jpg" alt="張孟恩的個人頭像" class="profile-picture">
             <p>靜宜大學人工智慧應用學系</p>
         </header>
 
@@ -55,7 +59,7 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-header">
-                        <i class="fas fa-laptop-code"></i> <!-- C# 沒有直接對應的品牌圖示，使用通用程式碼圖示替代 -->
+                        <i class="fas fa-laptop-code"></i>
                         <span>C#</span>
                     </div>
                     <div class="progress-bar">
@@ -69,16 +73,16 @@
         <section id="projects">
             <h2>專案作品</h2>
             <div class="projects-grid">
-                <!-- 專案卡片 1 -->
+                <!-- 專案卡片 1 (已更新) -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250.png?text=Project+Image" alt="專案圖片">
+                    <!-- 圖片路徑已更新 -->
+                    <img src="project1.png" alt="3D跑酷遊戲專案截圖">
                     <div class="card-content">
-                        <h3>專案名稱一</h3>
-                        <p>這裡是專案的簡短描述，說明這個專案的目的與特色。</p>
+                        <h3>Running Meow</h3>
+                        <p>這是一個使用 Unity 和 C# 開發的 3D 無盡跑酷遊戲，玩家需要控制貓咪躲避障礙並收集小魚干。</p>
                         <div class="tech-stack">
                             <span>Unity</span>
                             <span>C#</span>
-                            <span>AI</span>
                         </div>
                         <a href="#" target="_blank" class="project-link">查看專案</a>
                     </div>
@@ -87,8 +91,8 @@
                 <div class="project-card">
                     <img src="https://via.placeholder.com/400x250.png?text=Project+Image" alt="專案圖片">
                     <div class="card-content">
-                        <h3>專案名稱二</h3>
-                        <p>這裡是專案的簡短描述，說明這個專案的目的與特色。</p>
+                        <h3>Unity Shader Graph - Ice Tutorial</h3>
+                        <p>這是一個使用 Unity3D 做出的水晶體冰特效。</p>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>Flask</span>
