@@ -1,22 +1,25 @@
+/* --- Google Font (選用，提供溫潤感) --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap');
+
 /* --- 全局樣式 --- */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, "蘋方-繁", "Microsoft JhengHei", sans-serif;
+    /* 使用 'Noto Serif TC' 作為主要字體，如果想用回預設，可刪除此行 */
+    font-family: 'Noto Serif TC', 'Helvetica Neue', Helvetica, Arial, "蘋方-繁", "Microsoft JhengHei", serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    /* 背景改為淡藍色 */
-    background-color: #f0f6ff;
-    color: #343a40;
+    /* 背景改為更溫暖的米白/淡奶油色 */
+    background-color: #fdfaf6;
+    color: #4a4a4a; /* 文字顏色改為深灰，避免純黑的生硬感 */
 }
 
 .container {
-    max-width: 900px;
+    max-width: 850px;
     margin: 40px auto;
     padding: 40px;
     background-color: #ffffff;
-    /* 陰影調整得更柔和 */
-    box-shadow: 0 4px 15px rgba(100, 100, 150, 0.08);
-    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(120, 120, 150, 0.1);
+    border-radius: 8px;
 }
 
 section {
@@ -24,70 +27,80 @@ section {
 }
 
 h2 {
-    /* 標題改用不飽和的藍色 */
-    color: #5c85d6;
-    /* 邊框改為更細、更淡的線條 */
-    border-bottom: 1px solid #dfe6f0;
+    /* 標題改用柔和的灰藍色 */
+    color: #6a88a5;
+    border-bottom: 1px solid #e8e8e8;
     padding-bottom: 12px;
     margin-bottom: 25px;
-    font-size: 1.7em;
+    font-size: 1.6em;
     font-weight: 600;
 }
 
 /* --- Hero (首頁橫幅) --- */
 .hero {
     text-align: center;
-    padding: 30px 0;
-    border-bottom: 1px solid #dfe6f0;
+    padding: 20px 0;
+    border-bottom: 1px solid #e8e8e8;
     margin-bottom: 45px;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: 3.2em;
-    color: #2c3e50;
+    font-size: 3em;
+    color: #3e4c59;
     font-weight: 700;
 }
 
+/* 新增：個人圖片樣式 */
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 圓形 */
+    object-fit: cover; /* 確保圖片不變形 */
+    margin: 20px 0;
+    /* 加上柔和的邊框，像老照片一樣 */
+    border: 4px solid #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
 .hero p {
-    margin: 10px 0 0;
-    font-size: 1.4em;
-    color: #7f8c9b;
+    margin: 0;
+    font-size: 1.3em;
+    color: #8a9aaa;
 }
 
 /* --- Skills (技能) --- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
 .skill-item {
-    background-color: #f8faff;
+    background-color: #fdfdfd;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #eaf0f6;
+    border: 1px solid #f0f0f0;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(100, 100, 150, 0.06);
+    box-shadow: 0 4px 12px rgba(120, 120, 150, 0.08);
 }
 
 .skill-header {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    font-size: 1.15em;
+    font-size: 1.1em;
     font-weight: 600;
-    color: #34495e;
+    color: #596a7a;
 }
 
 .skill-header i {
     font-size: 1.5em;
-    /* 圖示改用不飽和的藍色 */
-    color: #5c85d6;
+    color: #8da9c4; /* 圖示顏色調整 */
     margin-right: 15px;
     width: 30px;
     text-align: center;
@@ -102,8 +115,7 @@ h2 {
 }
 
 .progress {
-    /* 進度條改用不飽和的藍色 */
-    background-color: #5c85d6;
+    background-color: #8da9c4; /* 進度條顏色調整 */
     height: 100%;
     border-radius: 10px;
 }
@@ -111,22 +123,22 @@ h2 {
 /* --- Projects (專案作品) --- */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .project-card {
     background-color: #fff;
-    border: 1px solid #eaf0f6;
+    border: 1px solid #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(100, 100, 150, 0.05);
+    box-shadow: 0 2px 8px rgba(120, 120, 150, 0.07);
     transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(100, 100, 150, 0.1);
+    box-shadow: 0 6px 18px rgba(120, 120, 150, 0.12);
 }
 
 .project-card img {
@@ -142,7 +154,7 @@ h2 {
 .card-content h3 {
     margin-top: 0;
     font-size: 1.3em;
-    color: #34495e;
+    color: #596a7a;
 }
 
 .tech-stack {
@@ -151,20 +163,19 @@ h2 {
 
 .tech-stack span {
     display: inline-block;
-    background-color: #eaf6ff;
-    color: #5c85d6;
+    background-color: #eef4f9;
+    color: #7b98b5;
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8em;
-    font-weight: 500;
+    font-weight: 600;
     margin-right: 8px;
     margin-bottom: 8px;
 }
 
 .project-link {
     display: inline-block;
-    /* 按鈕改用不飽和的藍色 */
-    background-color: #5c85d6;
+    background-color: #8da9c4; /* 按鈕顏色調整 */
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -174,8 +185,7 @@ h2 {
 }
 
 .project-link:hover {
-    /* 滑鼠懸停時的顏色也調整 */
-    background-color: #4a69a5;
+    background-color: #7a96b1;
 }
 
 /* --- Contact (聯絡方式) --- */
@@ -189,13 +199,12 @@ h2 {
 
 .contact-email {
     font-size: 1.2em;
-    font-weight: 500;
-    /* 連結改用不飽和的藍色 */
-    color: #5c85d6;
+    font-weight: 600;
+    color: #6a88a5; /* 連結顏色調整 */
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .contact-email:hover {
-    color: #4a69a5;
+    color: #59738c;
 }
