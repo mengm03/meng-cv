@@ -91,10 +91,11 @@
         <section id="projects">
             <h2>專案作品</h2>
 
-            <!-- === Running Meow 專案區塊 (按鈕連結已更新) === -->
             <div class="project-showcase project-showcase-white">
                 <h3>Running Meow</h3>
-                <img src="project1.png" alt="Running Meow 遊戲截圖" class="showcase-main-image">
+                <a href="https://youtu.be/g5Vpd8fuxA0" target="_blank" class="video-container">
+                    <img src="project1.png" alt="Running Meow 遊戲截圖" class="showcase-main-image">
+                </a>
                 <p>這是一個使用 Unity 和 C# 開發的 3D 無盡跑酷遊戲，玩家需要控制貓咪躲避障礙並收集小魚干。</p>
                 <div class="tech-stack">
                     <span>Unity</span>
@@ -102,14 +103,13 @@
                     <span>3D</span>
                     <span>game design</span>
                 </div>
-                <a href="https://youtu.be/g5Vpd8fuxA0" target="_blank" class="project-link">查看專案</a>
+                <a href="https://youtu.be/g5Vpd8fuxA0" target="_blank" class="project-link">觀看影片</a>
             </div>
 
-            <!-- === 神隱少女 專案區塊 === -->
             <div class="project-showcase">
                 <h3>《千と千尋の神隠し》</h3>
                 <img src="project3.png" alt="神隱少女介紹網頁專案圖片" class="showcase-main-image">
-                <p>這是在靜宜大學課程中，使用HTML、CSS以及Javascript製作的神隱少女介紹網頁，展示了基礎的網頁設計與排版能力。</p>
+                <p>這是在靜宜大學課程中，使用HTML、CSS以及Javascript製作的神隱少女介紹網頁。</p>
                 <div class="tech-stack">
                     <span>HTML</span>
                     <span>CSS</span>
@@ -118,29 +118,26 @@
                 <a href="https://www1.pu.edu.tw/~s1113464/index.html" target="_blank" class="project-link">前往網站</a>
             </div>
             
-            <!-- === Unity Shader - Ice 專案區塊 === -->
             <div class="project-showcase project-showcase-white">
                 <h3>Unity Shader - Ice</h3>
                 <img src="project2.png" alt="Unity水晶體冰特效" class="showcase-main-image">
                 <p>這是一個使用 Unity3D 做出的水晶體冰特效。</p>
                 <div class="tech-stack">
                     <span>Unity</span>
-                    <span>3D</span>
                     <span>Shader Graph</span>
                 </div>
                 <a href="https://youtu.be/Gym5JWHgjkk?si=P9r59mfaQHkNsSAq" target="_blank" class="project-link">觀看教學</a>
             </div>
 
-            <!-- === PS 專案區塊 === -->
             <div class="project-showcase">
                 <h3>個人資訊圖表設計</h3>
                 <img src="project4.png" alt="個人資訊圖表 Photoshop 作品" class="showcase-main-image">
-                <p>使用 Photoshop以及Illustrator進行的個人資訊視覺化設計，整合了圖表、時間軸和個人化元素，展現資訊排版與視覺傳達能力。</p>
+                <p>使用 Photoshop與Illustrator進行的個人資訊視覺化設計，展現資訊排版與視覺傳達能力。</p>
                 <div class="tech-stack">
                     <span>Photoshop</span>
                     <span>Illustrator</span>
-                    <span>Visual Design</span>
                 </div>
+                <a href="#" target="_blank" class="project-link">查看詳情</a>
             </div>
 
         </section>
@@ -153,5 +150,18 @@
         </section>
 
     </div>
+
+    <!-- === 新增的 JavaScript 控制碼 === -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (window.scrollY / scrollableHeight) * 100;
+            
+            // 根據滾動百分比，移動背景圖片的垂直位置
+            document.body.style.backgroundPositionY = scrollPercentage + '%';
+        });
+    </script>
+    <!-- === 控制碼結束 === -->
+
 </body>
 </html>

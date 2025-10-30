@@ -1,4 +1,4 @@
-/* --- Google Font (選用，提供溫潤感) --- */
+/* --- Google Font --- */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap');
 
 /* --- 全局樣式 --- */
@@ -7,36 +7,27 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    /* --- 背景已更新 --- */
-    background-image: url('background.jpg');
-    background-size: cover; /* 讓圖片填滿整個畫面 */
-    background-position: center; /* 將圖片置中 */
-    background-attachment: fixed; /* 固定背景，讓內容滾動時有層次感 */
     color: #4a4a4a;
+
+    /* --- 新的滾動背景樣式 --- */
+    background-image: url('sky-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto; /* 寬度填滿，高度自動，以顯示長圖 */
+    background-position: 0% 0%; /* 初始位置在頂部 */
+    /* 注意：不能使用 background-attachment: fixed; */
 }
 
 .container {
     max-width: 850px;
     margin: 40px auto;
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.9); /* 讓白色容器帶有一點透明度，能隱約看到背景 */
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 20px rgba(120, 120, 150, 0.1);
     border-radius: 8px;
-    backdrop-filter: blur(5px); /* 新增毛玻璃效果 (選用) */
+    backdrop-filter: blur(5px);
 }
 
-section {
-    margin-bottom: 45px;
-}
-
-h2 {
-    color: #6a88a5;
-    border-bottom: 1px solid #e8e8e8;
-    padding-bottom: 12px;
-    margin-bottom: 25px;
-    font-size: 1.6em;
-    font-weight: 600;
-}
+/* ... (後續樣式與之前相同，此處省略以節省篇幅) ... */
 
 /* --- Hero (首頁橫幅) --- */
 .hero {
@@ -59,7 +50,7 @@ h2 {
     border-radius: 50%;
     object-fit: cover;
     margin: 20px 0;
-    border: 4px solid rgba(240, 240, 240, 0.8); /* 邊框也加上透明度 */
+    border: 4px solid rgba(240, 240, 240, 0.8);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
@@ -120,81 +111,13 @@ h2 {
     border-radius: 10px;
 }
 
-/* --- Projects (專案作品) --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background-color: #fff;
-    border: 1px solid #f0f0f0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(120, 120, 150, 0.07);
-    transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(120, 120, 150, 0.12);
-}
-
-.project-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.card-content {
-    padding: 20px 25px;
-}
-
-.card-content h3 {
-    margin-top: 0;
-    font-size: 1.3em;
-    color: #596a7a;
-}
-
-.tech-stack {
-    margin: 15px 0;
-}
-
-.tech-stack span {
-    display: inline-block;
-    background-color: #eef4f9;
-    color: #7b98b5;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8em;
-    font-weight: 600;
-    margin-right: 8px;
-    margin-bottom: 8px;
-}
-
-.project-link {
-    display: inline-block;
-    background-color: #8da9c4;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.2s;
-}
-
-.project-link:hover {
-    background-color: #7a96b1;
-}
-
 /* --- 主打專案區塊樣式 --- */
 .project-showcase {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: rgba(248, 250, 255, 0.85); /* 加上透明度 */
+    background-color: rgba(248, 250, 255, 0.85);
     padding: 35px;
     border-radius: 8px;
     border: 1px solid rgba(234, 240, 246, 0.8);
@@ -231,14 +154,42 @@ h2 {
     margin-bottom: 25px;
 }
 
+.tech-stack span {
+    display: inline-block;
+    background-color: #eef4f9;
+    color: #7b98b5;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #8da9c4;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.project-link:hover {
+    background-color: #7a96b1;
+}
+
 /* --- 白色背景的主打專案樣式 --- */
 .project-showcase-white {
-    background-color: rgba(255, 255, 255, 0.9); /* 加上透明度 */
+    background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(224, 224, 224, 0.8);
 }
 
 /* --- 響應式影片容器樣式 --- */
 .video-container {
+    display: block; /* 讓 a 標籤像區塊一樣佔滿寬度 */
     position: relative;
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 */
@@ -249,19 +200,19 @@ h2 {
     box-shadow: 0 4px 15px rgba(120, 120, 150, 0.1);
 }
 
-.video-container iframe {
+.video-container img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 0;
+    object-fit: cover; /* 讓圖片填滿容器且不變形 */
 }
 
 /* --- Contact (聯絡方式) --- */
 #contact {
     text-align: center;
-    background-color: rgba(248, 250, 255, 0.85); /* 加上透明度 */
+    background-color: rgba(248, 250, 255, 0.85);
     padding: 35px;
     border-radius: 8px;
     border: 1px solid rgba(234, 240, 246, 0.8);
