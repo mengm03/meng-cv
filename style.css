@@ -208,48 +208,39 @@ h2 {
 .contact-email:hover {
     color: #59738c;
 }
-/* --- 新增：主打專案區塊樣式 --- */
+/* --- 更新後：主打專案區塊樣式 --- */
 .project-showcase {
     display: flex;
-    align-items: center;
-    gap: 30px; /* 圖片與文字的間距 */
+    flex-direction: column; /* 改為垂直排列 */
+    align-items: center; /* 所有項目置中對齊 */
+    text-align: center; /* 文字置中 */
     background-color: #f8faff;
-    padding: 30px;
+    padding: 35px;
     border-radius: 8px;
     border: 1px solid #eaf0f6;
     margin-top: 40px; /* 與上方卡片區的間距 */
 }
 
-.showcase-image {
-    flex-shrink: 0; /* 防止圖片被壓縮 */
-}
-
-.showcase-image img {
-    max-width: 300px; /* 限制圖片最大寬度 */
-    border-radius: 8px;
-    display: block;
-    box-shadow: 0 4px 12px rgba(120, 120, 150, 0.1);
-}
-
-.showcase-content h3 {
+.project-showcase h3 {
     margin-top: 0;
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: #596a7a;
-}
-
-.showcase-content p {
     margin-bottom: 20px;
 }
 
-/* 響應式設計：在小螢幕上，讓圖片與文字垂直堆疊 */
-@media (max-width: 768px) {
-    .project-showcase {
-        flex-direction: column;
-        text-align: center;
-    }
+.project-showcase .showcase-main-image {
+    max-width: 100%; /* 圖片最大寬度為容器寬度 */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(120, 120, 150, 0.1);
+}
 
-    .showcase-image img {
-        max-width: 100%; /* 在小螢幕上讓圖片滿寬 */
-        margin-bottom: 20px;
-    }
+.project-showcase p {
+    max-width: 600px; /* 讓文字段落不要太寬，方便閱讀 */
+    margin-bottom: 20px;
+}
+
+.project-showcase .tech-stack {
+    margin-bottom: 25px; /* 技能標籤與下方按鈕的間距 */
 }
