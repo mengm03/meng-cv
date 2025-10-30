@@ -7,7 +7,11 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background-color: #fdfaf6;
+    /* --- 背景已更新 --- */
+    background-image: url('background.jpg');
+    background-size: cover; /* 讓圖片填滿整個畫面 */
+    background-position: center; /* 將圖片置中 */
+    background-attachment: fixed; /* 固定背景，讓內容滾動時有層次感 */
     color: #4a4a4a;
 }
 
@@ -15,9 +19,10 @@ body {
     max-width: 850px;
     margin: 40px auto;
     padding: 40px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9); /* 讓白色容器帶有一點透明度，能隱約看到背景 */
     box-shadow: 0 4px 20px rgba(120, 120, 150, 0.1);
     border-radius: 8px;
+    backdrop-filter: blur(5px); /* 新增毛玻璃效果 (選用) */
 }
 
 section {
@@ -54,7 +59,7 @@ h2 {
     border-radius: 50%;
     object-fit: cover;
     margin: 20px 0;
-    border: 4px solid #f0f0f0;
+    border: 4px solid rgba(240, 240, 240, 0.8); /* 邊框也加上透明度 */
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
@@ -72,7 +77,7 @@ h2 {
 }
 
 .skill-item {
-    background-color: #fdfdfd;
+    background-color: rgba(253, 253, 253, 0.8);
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #f0f0f0;
@@ -189,16 +194,14 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #f8faff;
+    background-color: rgba(248, 250, 255, 0.85); /* 加上透明度 */
     padding: 35px;
     border-radius: 8px;
-    border: 1px solid #eaf0f6;
+    border: 1px solid rgba(234, 240, 246, 0.8);
     margin-top: 40px;
-    /* 新增：放大效果的過渡動畫 */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* 新增：鼠標懸停時的放大效果 */
 .project-showcase:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 25px rgba(120, 120, 150, 0.12);
@@ -230,8 +233,8 @@ h2 {
 
 /* --- 白色背景的主打專案樣式 --- */
 .project-showcase-white {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.9); /* 加上透明度 */
+    border: 1px solid rgba(224, 224, 224, 0.8);
 }
 
 /* --- 響應式影片容器樣式 --- */
@@ -258,10 +261,10 @@ h2 {
 /* --- Contact (聯絡方式) --- */
 #contact {
     text-align: center;
-    background-color: #f8faff;
+    background-color: rgba(248, 250, 255, 0.85); /* 加上透明度 */
     padding: 35px;
     border-radius: 8px;
-    border: 1px solid #eaf0f6;
+    border: 1px solid rgba(234, 240, 246, 0.8);
 }
 
 .contact-email {
