@@ -3,14 +3,12 @@
 
 /* --- 全局樣式 --- */
 body {
-    /* 使用 'Noto Serif TC' 作為主要字體，如果想用回預設，可刪除此行 */
     font-family: 'Noto Serif TC', 'Helvetica Neue', Helvetica, Arial, "蘋方-繁", "Microsoft JhengHei", serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    /* 背景改為更溫暖的米白/淡奶油色 */
     background-color: #fdfaf6;
-    color: #4a4a4a; /* 文字顏色改為深灰，避免純黑的生硬感 */
+    color: #4a4a4a;
 }
 
 .container {
@@ -27,7 +25,6 @@ section {
 }
 
 h2 {
-    /* 標題改用柔和的灰藍色 */
     color: #6a88a5;
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 12px;
@@ -51,14 +48,12 @@ h2 {
     font-weight: 700;
 }
 
-/* 新增：個人圖片樣式 */
 .profile-picture {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* 圓形 */
-    object-fit: cover; /* 確保圖片不變形 */
+    border-radius: 50%;
+    object-fit: cover;
     margin: 20px 0;
-    /* 加上柔和的邊框，像老照片一樣 */
     border: 4px solid #f0f0f0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
@@ -100,7 +95,7 @@ h2 {
 
 .skill-header i {
     font-size: 1.5em;
-    color: #8da9c4; /* 圖示顏色調整 */
+    color: #8da9c4;
     margin-right: 15px;
     width: 30px;
     text-align: center;
@@ -115,7 +110,7 @@ h2 {
 }
 
 .progress {
-    background-color: #8da9c4; /* 進度條顏色調整 */
+    background-color: #8da9c4;
     height: 100%;
     border-radius: 10px;
 }
@@ -175,7 +170,7 @@ h2 {
 
 .project-link {
     display: inline-block;
-    background-color: #8da9c4; /* 按鈕顏色調整 */
+    background-color: #8da9c4;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -188,37 +183,25 @@ h2 {
     background-color: #7a96b1;
 }
 
-/* --- Contact (聯絡方式) --- */
-#contact {
+/* --- 主打專案區塊樣式 --- */
+.project-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     background-color: #f8faff;
     padding: 35px;
     border-radius: 8px;
     border: 1px solid #eaf0f6;
+    margin-top: 40px;
+    /* 新增：放大效果的過渡動畫 */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.contact-email {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #6a88a5; /* 連結顏色調整 */
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.contact-email:hover {
-    color: #59738c;
-}
-/* --- 更新後：主打專案區塊樣式 --- */
-.project-showcase {
-    display: flex;
-    flex-direction: column; /* 改為垂直排列 */
-    align-items: center; /* 所有項目置中對齊 */
-    text-align: center; /* 文字置中 */
-    background-color: #f8faff;
-    padding: 35px;
-    border-radius: 8px;
-    border: 1px solid #eaf0f6;
-    margin-top: 40px; /* 與上方卡片區的間距 */
+/* 新增：鼠標懸停時的放大效果 */
+.project-showcase:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(120, 120, 150, 0.12);
 }
 
 .project-showcase h3 {
@@ -229,7 +212,7 @@ h2 {
 }
 
 .project-showcase .showcase-main-image {
-    max-width: 100%; /* 圖片最大寬度為容器寬度 */
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 25px;
@@ -237,23 +220,25 @@ h2 {
 }
 
 .project-showcase p {
-    max-width: 600px; /* 讓文字段落不要太寬，方便閱讀 */
+    max-width: 600px;
     margin-bottom: 20px;
 }
 
 .project-showcase .tech-stack {
-    margin-bottom: 25px; /* 技能標籤與下方按鈕的間距 */
+    margin-bottom: 25px;
 }
-/* --- 新增：白色背景的主打專案樣式 --- */
+
+/* --- 白色背景的主打專案樣式 --- */
 .project-showcase-white {
-    background-color: #ffffff; /* 背景改為白色 */
-    border: 1px solid #e0e0e0; /* 邊框使用稍深的灰色以突顯邊界 */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
 }
-/* --- 新增：響應式影片容器樣式 --- */
+
+/* --- 響應式影片容器樣式 --- */
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 比例 (9 / 16 = 0.5625) */
+    padding-bottom: 56.25%; /* 16:9 */
     height: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -268,4 +253,25 @@ h2 {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* --- Contact (聯絡方式) --- */
+#contact {
+    text-align: center;
+    background-color: #f8faff;
+    padding: 35px;
+    border-radius: 8px;
+    border: 1px solid #eaf0f6;
+}
+
+.contact-email {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #6a88a5;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-email:hover {
+    color: #59738c;
 }
