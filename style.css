@@ -4,49 +4,55 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    /* 背景改為淡藍色 */
+    background-color: #f0f6ff;
     color: #343a40;
 }
 
 .container {
     max-width: 900px;
-    margin: 30px auto;
-    padding: 30px;
+    margin: 40px auto;
+    padding: 40px;
     background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    /* 陰影調整得更柔和 */
+    box-shadow: 0 4px 15px rgba(100, 100, 150, 0.08);
     border-radius: 10px;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 h2 {
-    color: #007bff;
-    border-bottom: 2px solid #e9ecef;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-size: 1.8em;
+    /* 標題改用不飽和的藍色 */
+    color: #5c85d6;
+    /* 邊框改為更細、更淡的線條 */
+    border-bottom: 1px solid #dfe6f0;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-size: 1.7em;
+    font-weight: 600;
 }
 
 /* --- Hero (首頁橫幅) --- */
 .hero {
     text-align: center;
-    padding: 40px 0;
-    border-bottom: 1px solid #dee2e6;
-    margin-bottom: 40px;
+    padding: 30px 0;
+    border-bottom: 1px solid #dfe6f0;
+    margin-bottom: 45px;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: 3.5em;
-    color: #212529;
+    font-size: 3.2em;
+    color: #2c3e50;
+    font-weight: 700;
 }
 
 .hero p {
     margin: 10px 0 0;
-    font-size: 1.5em;
-    color: #6c757d;
+    font-size: 1.4em;
+    color: #7f8c9b;
 }
 
 /* --- Skills (技能) --- */
@@ -57,42 +63,47 @@ h2 {
 }
 
 .skill-item {
-    background-color: #f8f9fa;
+    background-color: #f8faff;
     padding: 20px;
     border-radius: 8px;
-    transition: transform 0.2s;
+    border: 1px solid #eaf0f6;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(100, 100, 150, 0.06);
 }
 
 .skill-header {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
-    font-size: 1.2em;
-    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #34495e;
 }
 
 .skill-header i {
     font-size: 1.5em;
-    color: #007bff;
+    /* 圖示改用不飽和的藍色 */
+    color: #5c85d6;
     margin-right: 15px;
-    width: 30px; /* 固定圖示寬度，讓文字對齊 */
+    width: 30px;
     text-align: center;
 }
 
 .progress-bar {
     background-color: #e9ecef;
     border-radius: 10px;
-    height: 12px;
+    height: 10px;
     width: 100%;
     overflow: hidden;
 }
 
 .progress {
-    background-color: #007bff;
+    /* 進度條改用不飽和的藍色 */
+    background-color: #5c85d6;
     height: 100%;
     border-radius: 10px;
 }
@@ -106,16 +117,16 @@ h2 {
 
 .project-card {
     background-color: #fff;
-    border: 1px solid #e9ecef;
+    border: 1px solid #eaf0f6;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(100, 100, 150, 0.05);
     transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 18px rgba(100, 100, 150, 0.1);
 }
 
 .project-card img {
@@ -125,13 +136,13 @@ h2 {
 }
 
 .card-content {
-    padding: 20px;
+    padding: 20px 25px;
 }
 
 .card-content h3 {
     margin-top: 0;
-    font-size: 1.4em;
-    color: #343a40;
+    font-size: 1.3em;
+    color: #34495e;
 }
 
 .tech-stack {
@@ -140,18 +151,20 @@ h2 {
 
 .tech-stack span {
     display: inline-block;
-    background-color: #e9ecef;
-    color: #495057;
+    background-color: #eaf6ff;
+    color: #5c85d6;
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8em;
+    font-weight: 500;
     margin-right: 8px;
     margin-bottom: 8px;
 }
 
 .project-link {
     display: inline-block;
-    background-color: #007bff;
+    /* 按鈕改用不飽和的藍色 */
+    background-color: #5c85d6;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -161,24 +174,28 @@ h2 {
 }
 
 .project-link:hover {
-    background-color: #0056b3;
+    /* 滑鼠懸停時的顏色也調整 */
+    background-color: #4a69a5;
 }
 
 /* --- Contact (聯絡方式) --- */
 #contact {
     text-align: center;
-    background-color: #f8f9fa;
-    padding: 30px;
+    background-color: #f8faff;
+    padding: 35px;
     border-radius: 8px;
+    border: 1px solid #eaf0f6;
 }
 
 .contact-email {
     font-size: 1.2em;
-    font-weight: bold;
-    color: #007bff;
+    font-weight: 500;
+    /* 連結改用不飽和的藍色 */
+    color: #5c85d6;
     text-decoration: none;
+    transition: color 0.2s;
 }
 
 .contact-email:hover {
-    text-decoration: underline;
+    color: #4a69a5;
 }
