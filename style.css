@@ -244,3 +244,8 @@ h2 {
 .project-showcase .tech-stack {
     margin-bottom: 25px; /* 技能標籤與下方按鈕的間距 */
 }
+/* --- 新增：白色背景的主打專案樣式 --- */
+.project-showcase-white {
+    background-color: #ffffff; /* 背景改為白色 */
+    border: 1px solid #e0e0e0; /* 邊框使用稍深的灰色以突顯邊界 */
+}
