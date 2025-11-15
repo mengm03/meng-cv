@@ -1,231 +1,235 @@
-/* --- Google Font --- */
+/* --- Google Font & 全局樣式 --- */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap');
 
-/* --- 全局樣式 --- */
-body {
-    font-family: 'Noto Serif TC', 'Helvetica Neue', Helvetica, Arial, "蘋方-繁", "Microsoft JhengHei", serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    color: #4a4a4a;
-
-    /* --- 新的滾動背景樣式 --- */
-    background-image: url('sky-background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% auto; /* 寬度填滿，高度自動，以顯示長圖 */
-    background-position: 0% 0%; /* 初始位置在頂部 */
-    /* 注意：不能使用 background-attachment: fixed; */
+html {
+    scroll-behavior: smooth; /* 讓錨點點擊有平滑滾動效果 */
 }
 
+body {
+    font-family: 'Noto Serif TC', 'Helvetica Neue', Helvetica, Arial, "蘋方-繁", "Microsoft JhengHei", serif;
+    line-height: 1.8; margin: 0; padding: 0; color: #4a4a4a;
+    background-image: url('sky-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0% 0%;
+}
+
+/* Modal 開啟時，鎖定 body 捲軸 */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* --- 1. Header/Nav 樣式 --- */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+    padding: 0 40px;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3e4c59;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #596a7a;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8da9c4;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3e4c59;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- CTA Button 樣式 --- */
+.cta-button {
+    background-color: #8da9c4;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(141, 169, 196, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #7a96b1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(141, 169, 196, 0.5);
+}
+
+
+/* --- 2. Hero/Banner 樣式 --- */
+.hero-banner {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 70px; /* 避免內容被 Nav 擋住 */
+}
+
+.hero-content h1 {
+    margin: 0; font-size: 3.5em; color: #3e4c59; font-weight: 700;
+}
+.hero-content .profile-picture {
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 25px 0;
+    border: 4px solid rgba(240, 240, 240, 0.8); box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.hero-content p {
+    margin: 0; font-size: 1.4em; color: #8a9aaa;
+}
+
+
+/* --- 主內容區塊樣式 --- */
 .container {
     max-width: 850px;
-    margin: 40px auto;
+    margin: 0 auto; /* 改為 0 auto，因為 Banner 在外部 */
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.92);
     box-shadow: 0 4px 20px rgba(120, 120, 150, 0.1);
     border-radius: 8px;
     backdrop-filter: blur(5px);
 }
 
-/* ... (後續樣式與之前相同，此處省略以節省篇幅) ... */
-
-/* --- Hero (首頁橫幅) --- */
-.hero {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #e8e8e8;
-    margin-bottom: 45px;
+.section-padded {
+    padding-top: 80px; /* 為錨點滾動增加額外空間 */
+    margin-top: -70px;
 }
 
-.hero h1 {
-    margin: 0;
-    font-size: 3em;
-    color: #3e4c59;
-    font-weight: 700;
+h2 {
+    color: #6a88a5; border-bottom: 1px solid #e8e8e8; padding-bottom: 12px;
+    margin-bottom: 25px; font-size: 1.8em; font-weight: 600;
 }
 
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 20px 0;
-    border: 4px solid rgba(240, 240, 240, 0.8);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.hero p {
-    margin: 0;
-    font-size: 1.3em;
-    color: #8a9aaa;
-}
-
-/* --- Skills (技能) --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-.skill-item {
-    background-color: rgba(253, 253, 253, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #f0f0f0;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(120, 120, 150, 0.08);
-}
-
-.skill-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #596a7a;
-}
-
-.skill-header i {
-    font-size: 1.5em;
-    color: #8da9c4;
-    margin-right: 15px;
-    width: 30px;
-    text-align: center;
-}
-
-.progress-bar {
-    background-color: #e9ecef;
-    border-radius: 10px;
-    height: 10px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.progress {
-    background-color: #8da9c4;
-    height: 100%;
-    border-radius: 10px;
-}
-
-/* --- 主打專案區塊樣式 --- */
-.project-showcase {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(248, 250, 255, 0.85);
-    padding: 35px;
-    border-radius: 8px;
-    border: 1px solid rgba(234, 240, 246, 0.8);
-    margin-top: 40px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.project-showcase:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(120, 120, 150, 0.12);
-}
-
-.project-showcase h3 {
-    margin-top: 0;
-    font-size: 1.8em;
-    color: #596a7a;
-    margin-bottom: 20px;
-}
-
-.project-showcase .showcase-main-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(120, 120, 150, 0.1);
-}
-
-.project-showcase p {
-    max-width: 600px;
-    margin-bottom: 20px;
-}
-
-.project-showcase .tech-stack {
-    margin-bottom: 25px;
-}
-
-.tech-stack span {
-    display: inline-block;
-    background-color: #eef4f9;
-    color: #7b98b5;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8em;
-    font-weight: 600;
-    margin-right: 8px;
-    margin-bottom: 8px;
-}
-
-.project-link {
-    display: inline-block;
-    background-color: #8da9c4;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.2s;
-}
-
-.project-link:hover {
-    background-color: #7a96b1;
-}
-
-/* --- 白色背景的主打專案樣式 --- */
-.project-showcase-white {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(224, 224, 224, 0.8);
-}
-
-/* --- 響應式影片容器樣式 --- */
-.video-container {
-    display: block; /* 讓 a 標籤像區塊一樣佔滿寬度 */
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(120, 120, 150, 0.1);
-}
-
-.video-container img {
-    position: absolute;
+/* --- 3. Modal Form 樣式 --- */
+.modal-overlay {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 讓圖片填滿容器且不變形 */
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* 預設隱藏 */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
 }
 
-/* --- Contact (聯絡方式) --- */
-#contact {
-    text-align: center;
-    background-color: rgba(248, 250, 255, 0.85);
-    padding: 35px;
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
     border-radius: 8px;
-    border: 1px solid rgba(234, 240, 246, 0.8);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
 }
 
-.contact-email {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #6a88a5;
-    text-decoration: none;
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
     transition: color 0.2s;
 }
+.modal-close-btn:hover { color: #333; }
 
-.contact-email:hover {
-    color: #59738c;
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #596a7a;
+    text-align: center;
 }
+
+.modal-content p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #8a9aaa;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #596a7a;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+}
+.contact-form textarea { resize: vertical; }
+.contact-form .cta-button { width: 100%; }
+
+/* --- 既有樣式 ... (此處省略重複部分) --- */
+.skills-grid, .project-showcase, #contact {
+    /* 既有樣式保持不變 */
+}
+/* ... 貼上您原本 style.css 的 .skills-grid 到 #contact 之間的所有樣式 ... */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}.skill-item{background-color:rgba(253,253,253,.8);padding:20px;border-radius:8px;border:1px solid #f0f0f0;transition:transform .2s,box-shadow .2s}.skill-item:hover{transform:translateY(-5px);box-shadow:0 4px 12px rgba(120,120,150,.08)}.skill-header{display:flex;align-items:center;margin-bottom:15px;font-size:1.1em;font-weight:600;color:#596a7a}.skill-header i{font-size:1.5em;color:#8da9c4;margin-right:15px;width:30px;text-align:center}.progress-bar{background-color:#e9ecef;border-radius:10px;height:10px;width:100%;overflow:hidden}.progress{background-color:#8da9c4;height:100%;border-radius:10px}.project-showcase{display:flex;flex-direction:column;align-items:center;text-align:center;background-color:rgba(248,250,255,.85);padding:35px;border-radius:8px;border:1px solid rgba(234,240,246,.8);margin-top:40px;transition:transform .3s ease-in-out,box-shadow .3s ease-in-out}.project-showcase:hover{transform:scale(1.03);box-shadow:0 8px 25px rgba(120,120,150,.12)}.project-showcase h3{margin-top:0;font-size:1.8em;color:#596a7a;margin-bottom:20px}.project-showcase .showcase-main-image{max-width:100%;height:auto;border-radius:8px;margin-bottom:25px;box-shadow:0 4px 15px rgba(120,120,150,.1)}.project-showcase p{max-width:600px;margin-bottom:20px}.project-showcase .tech-stack{margin-bottom:25px}.tech-stack span{display:inline-block;background-color:#eef4f9;color:#7b98b5;padding:5px 12px;border-radius:15px;font-size:.8em;font-weight:600;margin-right:8px;margin-bottom:8px}.project-link{display:inline-block;background-color:#8da9c4;color:#fff;padding:10px 20px;border-radius:5px;text-decoration:none;font-weight:bold;transition:background-color .2s}.project-link:hover{background-color:#7a96b1}.project-showcase-white{background-color:rgba(255,255,255,.9);border:1px solid rgba(224,224,224,.8)}.video-container{display:block;position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin-bottom:25px;box-shadow:0 4px 15px rgba(120,120,150,.1)}.video-container img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}#contact{text-align:center;background-color:rgba(248,250,255,.85);padding:35px;border-radius:8px;border:1px solid rgba(234,240,246,.8)}.contact-email{font-size:1.2em;font-weight:600;color:#6a88a5;text-decoration:none;transition:color .2s}.contact-email:hover{color:#59738c}

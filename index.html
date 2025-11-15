@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>張孟恩 - 個人線上CV</title>
-    <!-- 引入新的 Google Font 字體 (選用) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,14 +11,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Hero (首頁橫幅) -->
-        <header class="hero">
+
+    <!-- === 1. 新增的 Header/Nav 導覽列 === -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="#" class="nav-brand">張孟恩</a>
+            <ul class="nav-links">
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#skills">專業技能</a></li>
+                <li><a href="#projects">專案作品</a></li>
+                <li><a href="#contact">聯絡方式</a></li>
+            </ul>
+            <!-- === 3. 新增的 CTA 按鈕 === -->
+            <button id="openModalBtn" class="cta-button">聯絡我</button>
+        </div>
+    </nav>
+
+    <!-- === 2. 升級後的 Hero/Banner Section === -->
+    <header class="hero-banner">
+        <div class="hero-content">
             <h1>張孟恩</h1>
             <img src="profile.jpg" alt="張孟恩的個人頭像" class="profile-picture">
             <p>靜宜大學人工智慧應用學系</p>
-        </header>
+        </div>
+    </header>
 
+    <!-- 主內容容器 -->
+    <div class="container">
         <!-- About (關於我) -->
         <section id="about">
             <h2>關於我</h2>
@@ -27,141 +45,117 @@
         </section>
 
         <!-- Skills (技能) -->
-        <section id="skills">
+        <section id="skills" class="section-padded">
             <h2>專業技能</h2>
             <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fas fa-file-word"></i>
-                        <span>Word</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fas fa-file-powerpoint"></i>
-                        <span>PowerPoint</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fab fa-unity"></i>
-                        <span>Unity</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fas fa-laptop-code"></i>
-                        <span>C#</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fas fa-pen-ruler"></i>
-                        <span>Illustrator</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fas fa-palette"></i>
-                        <span>Photoshop</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 65%;"></div>
-                    </div>
-                </div>
+                <div class="skill-item"><div class="skill-header"><i class="fas fa-file-word"></i><span>Word</span></div><div class="progress-bar"><div class="progress" style="width: 90%;"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><i class="fas fa-file-powerpoint"></i><span>PowerPoint</span></div><div class="progress-bar"><div class="progress" style="width: 85%;"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><i class="fab fa-unity"></i><span>Unity</span></div><div class="progress-bar"><div class="progress" style="width: 75%;"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><i class="fas fa-laptop-code"></i><span>C#</span></div><div class="progress-bar"><div class="progress" style="width: 80%;"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><i class="fas fa-pen-ruler"></i><span>Illustrator</span></div><div class="progress-bar"><div class="progress" style="width: 70%;"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><i class="fas fa-palette"></i><span>Photoshop</span></div><div class="progress-bar"><div class="progress" style="width: 65%;"></div></div></div>
             </div>
         </section>
 
         <!-- Projects (專案作品) -->
-        <section id="projects">
+        <section id="projects" class="section-padded">
             <h2>專案作品</h2>
-
-            <div class="project-showcase project-showcase-white">
-                <h3>Running Meow</h3>
-                <a href="https://youtu.be/g5Vpd8fuxA0" target="_blank" class="video-container">
-                    <img src="project1.png" alt="Running Meow 遊戲截圖" class="showcase-main-image">
-                </a>
-                <p>這是一個使用 Unity 和 C# 開發的 3D 無盡跑酷遊戲，玩家需要控制貓咪躲避障礙並收集小魚干。</p>
-                <div class="tech-stack">
-                    <span>Unity</span>
-                    <span>C#</span>
-                    <span>3D</span>
-                    <span>game design</span>
-                </div>
-                <a href="https://youtu.be/g5Vpd8fuxA0" target="_blank" class="project-link">觀看影片</a>
-            </div>
-
-            <div class="project-showcase">
-                <h3>《千と千尋の神隠し》</h3>
-                <img src="project3.png" alt="神隱少女介紹網頁專案圖片" class="showcase-main-image">
-                <p>這是在靜宜大學課程中，使用HTML、CSS以及Javascript製作的神隱少女介紹網頁。</p>
-                <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>Javascript</span>
-                </div>
-                <a href="https://www1.pu.edu.tw/~s1113464/index.html" target="_blank" class="project-link">前往網站</a>
-            </div>
-            
-            <div class="project-showcase project-showcase-white">
-                <h3>Unity Shader - Ice</h3>
-                <img src="project2.png" alt="Unity水晶體冰特效" class="showcase-main-image">
-                <p>這是一個使用 Unity3D 做出的水晶體冰特效。</p>
-                <div class="tech-stack">
-                    <span>Unity</span>
-                    <span>3D</span>
-                    <span>Shader Graph</span>
-                </div>
-                <a href="https://youtu.be/Gym5JWHgjkk?si=P9r59mfaQHkNsSAq" target="_blank" class="project-link">觀看教學</a>
-            </div>
-
-            <div class="project-showcase">
-                <h3>個人資訊圖表設計</h3>
-                <img src="project4.png" alt="個人資訊圖表 Photoshop 作品" class="showcase-main-image">
-                <p>使用 Photoshop與Illustrator進行的個人資訊視覺化設計，展現資訊排版與視覺傳達能力。</p>
-                <div class="tech-stack">
-                    <span>Photoshop</span>
-                    <span>Illustrator</span>
-                </div>
-            </div>
-
+            <div class="project-showcase project-showcase-white"><h3>Running Meow</h3><a href="https://youtu.be/g5Vpd8fuxA0" target="_blank" class="video-container"><img src="project1.png" alt="Running Meow 遊戲截圖" class="showcase-main-image"></a><p>這是一個使用 Unity 和 C# 開發的 3D 無盡跑酷遊戲...</p><div class="tech-stack"><span>Unity</span><span>C#</span><span>3D</span><span>game design</span></div><a href="https://youtu.be/g5Vpd8fuxA0" target="_blank" class="project-link">觀看影片</a></div>
+            <div class="project-showcase"><h3>《千と千尋の神隠し》</h3><img src="project3.png" alt="神隱少女介紹網頁專案圖片" class="showcase-main-image"><p>這是在靜宜大學課程中，使用HTML、CSS以及Javascript製作的神隱少女介紹網頁。</p><div class="tech-stack"><span>HTML</span><span>CSS</span><span>Javascript</span></div><a href="https://www1.pu.edu.tw/~s1113464/index.html" target="_blank" class="project-link">前往網站</a></div>
+            <div class="project-showcase project-showcase-white"><h3>Unity Shader - Ice</h3><img src="project2.png" alt="Unity水晶體冰特效" class="showcase-main-image"><p>這是一個使用 Unity3D 做出的水晶體冰特效。</p><div class="tech-stack"><span>Unity</span><span>Shader Graph</span></div><a href="https://youtu.be/Gym5JWHgjkk?si=P9r59mfaQHkNsSAq" target="_blank" class="project-link">觀看教學</a></div>
+            <div class="project-showcase"><h3>個人資訊圖表設計</h3><img src="project4.png" alt="個人資訊圖表 Photoshop 作品" class="showcase-main-image"><p>使用 Photoshop與Illustrator進行的個人資訊視覺化設計...</p><div class="tech-stack"><span>Photoshop</span><span>Illustrator</span></div></div>
         </section>
 
         <!-- Contact (聯絡方式) -->
-        <section id="contact">
+        <section id="contact" class="section-padded">
             <h2>聯絡方式</h2>
             <p>如果對我的作品感興趣或有想尋求合作機會，歡迎隨時與我聯繫！</p>
-            <a href="mailto:mengm03@gmail.com" class="contact-email">mengm9749@gmail.com</a>
+            <a href="mailto:mengm03@gmail.com" class="contact-email">mengm03@gmail.com</a>
         </section>
-
     </div>
 
-    <!-- === 新增的 JavaScript 控制碼 === -->
+    <!-- === 3. 新增的 Modal Form 結構 === -->
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="modal-close-btn">&times;</button>
+            <h3>聯絡我</h3>
+            <p>期待收到您的訊息！</p>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">您的姓名</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">您的 Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">訊息內容</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">發送訊息</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- === 更新後的 JavaScript 控制碼 === -->
     <script>
+        // --- 視差滾動效果 ---
         window.addEventListener('scroll', function() {
+            // ... (視差滾動代碼保持不變)
             const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercentage = (window.scrollY / scrollableHeight) * 100;
-            
-            // 根據滾動百分比，移動背景圖片的垂直位置
-            document.body.style.backgroundPositionY = scrollPercentage + '%';
+            if (scrollableHeight > 0) {
+                const scrollPercentage = (window.scrollY / scrollableHeight) * 100;
+                document.body.style.backgroundPositionY = scrollPercentage + '%';
+            }
+        });
+
+        // --- Modal 表單控制 ---
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const contactModal = document.getElementById('contactModal');
+
+        // 開啟 Modal
+        openModalBtn.addEventListener('click', () => {
+            contactModal.style.display = 'flex';
+            document.body.classList.add('modal-open'); // 新增 class 以禁用背景滾動
+        });
+
+        // 關閉 Modal
+        function closeModal() {
+            contactModal.style.display = 'none';
+            document.body.classList.remove('modal-open'); // 移除 class 以恢復背景滾動
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // 點擊 Modal 背景時關閉
+        contactModal.addEventListener('click', function(event) {
+            if (event.target === contactModal) {
+                closeModal();
+            }
+        });
+
+        // 按下 Escape 鍵時關閉
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // --- 平滑滾動到錨點 ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
-    <!-- === 控制碼結束 === -->
-
 </body>
 </html>
