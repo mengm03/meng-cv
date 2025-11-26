@@ -145,12 +145,13 @@
             // 準備資料
             const formData = new FormData(form);
 
-            // 發送資料
             fetch(scriptURL, {
                 method: 'POST',
-                body: formData
+                body: formData,
+                mode: 'no-cors' // <--- 加入這一行，這能解決大部分跨域錯誤
             })
             .then(response => {
+                // 因為用了 no-cors，我們無法檢查 response.ok，直接視為成功
                 alert('訊息已成功送出！我會盡快回覆您。');
                 form.reset(); // 清空表單
                 closeModal(); // 關閉視窗
