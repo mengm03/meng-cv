@@ -115,18 +115,6 @@
     <!-- JavaScript 控制碼 -->
     <script>
         window.addEventListener('scroll',function(){const e=document.documentElement.scrollHeight-window.innerHeight;e>0&&(document.body.style.backgroundPositionY=window.scrollY/e*100+"%")});const openModalBtn=document.getElementById("openModalBtn"),closeModalBtn=document.getElementById("closeModalBtn"),contactModal=document.getElementById("contactModal");function closeModal(){contactModal.style.display="none",document.body.classList.remove("modal-open")}openModalBtn.addEventListener("click",()=>{contactModal.style.display="flex",document.body.classList.add("modal-open")}),closeModalBtn.addEventListener("click",closeModal),contactModal.addEventListener("click",function(e){e.target===contactModal&&closeModal()}),document.addEventListener("keydown",function(e){"Escape"===e.key&&closeModal()}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();const o=this.getAttribute("href"),n=document.querySelector(o);n&&n.scrollIntoView({behavior:"smooth"})})});
-        // === 新增：自動填入測試資料 ===
-        document.addEventListener('DOMContentLoaded', function() {
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const messageInput = document.getElementById('message');
-
-            if (nameInput && emailInput && messageInput) {
-                nameInput.value = "測試人員";
-                emailInput.value = "test@example.com";
-                messageInput.value = "您好，這是一則自動填入的測試訊息，用於驗證表單送出功能是否正常運作。";
-            }
-        });
          // --- 3. 新增：處理表單送出至 Google Sheet ---
          const form = document.querySelector('.contact-form');
         const submitBtn = form.querySelector('button[type="submit"]');
