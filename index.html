@@ -127,6 +127,44 @@
                 messageInput.value = "您好，這是一則自動填入的測試訊息，用於驗證表單送出功能是否正常運作。";
             }
         });
+         // --- 3. 新增：處理表單送出至 Google Sheet ---
+         const form = document.querySelector('.contact-form');
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // 阻止表單預設跳轉頁面
+
+            // *** 請將下方的 URL 替換成您第一步複製的 Google Script 網址 ***
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyTw-zEvEoLOM9NBwQEdyyXs0t9GCEx4WVL71ByckZBjeMbz7ZpJg-_PhuTj-dCYrIA/exec';
+
+            // 顯示載入中狀態
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = '傳送中...';
+            submitBtn.disabled = true;
+
+            // 準備資料
+            const formData = new FormData(form);
+
+            // 發送資料
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                alert('訊息已成功送出！我會盡快回覆您。');
+                form.reset(); // 清空表單
+                closeModal(); // 關閉視窗
+            })
+            .catch(error => {
+                alert('哎呀！發送失敗，請稍後再試或直接寄信給我。');
+                console.error('Error!', error.message);
+            })
+            .finally(() => {
+                // 恢復按鈕狀態
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
+        });
     </script>
 </body>
 </html>
